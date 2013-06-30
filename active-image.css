@@ -1,0 +1,60 @@
+.active-image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  display: block;
+
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  transform-origin: 0 0;
+  animation-name: grow;
+  animation-timing-function: cubic-bezier(1, 0, .25, .90);
+
+  -webkit-animation-duration: 300ms;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-transform-origin: 0 0;
+  -webkit-animation-name: grow;
+  -webkit-animation-timing-function: cubic-bezier(1, 0, .25, .90);
+}
+
+.active-image.shrink {
+  animation-name: shrink;
+  -webkit-animation-name: shrink;
+}
+
+@keyframes grow {
+
+  100% {
+    transform: translate3d(0,0,0) scale3d(1,1,1);
+  }
+
+}
+
+@-webkit-keyframes grow {
+
+  100% {
+    -webkit-transform: translate3d(0,0,0) scale3d(1,1,1);
+  }
+
+}
+
+@keyframes shrink {
+
+  0% {
+    transform: translate3d(0,0,0) scale3d(1,1,1);
+  }
+
+}
+
+@-webkit-keyframes shrink {
+
+  0% {
+    -webkit-transform: translate3d(0,0,0) scale3d(1,1,1);
+  }
+
+}
