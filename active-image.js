@@ -7,52 +7,65 @@
         // Applying to all matching dom elements
         return this.each(function() {
 
-            $(this).css({'cursor': 'pointer'});
+            // Applying the dom element to the variable 'self'
+            var $self = $(this);
+
+            $self.css({'cursor': 'pointer'});
 
             // Add an event listener for clicks
-            $(this).on('click', function (event) {
+            $self.on('click', function (event) {
 
                 event.stopPropagation();
 
-                var imageUrl = $(this).attr("src")
+                var imageUrl = $self.attr('src');
 
                 // Build the new image HTML
-                var bigImage = $('<div class="active-image"></div>');
+                var bigImage = document.createElement('div');
+                bigImage.className =  'active-image';
 
                 var offset = $(this).offset();
                 var offsetAdjust;
 
-                var size = {};
+                var size = {
+                    'scaleX': undefined,
+                    'scaleY': undefined
+                };
 
-                var viewPortRatio = document.documentElement.clientWidth / document.documentElement.clientHeight;
-                var imageRatio = $(this).width() / $(this).height();
+                var imageWidth = $self.width();
+                var imageHeight = $self.height();
+
+                var viewportWidth = document.documentElement.clientWidth;
+                var viewportHeight = document.documentElement.clientHeight;
+
+
+                var viewPortRatio = viewportWidth / viewportHeight;
+                var imageRatio = imageWidth / imageHeight;
 
                 if (imageRatio >= viewPortRatio) {
-                    size.scaleX = $(this).width() / document.documentElement.clientWidth;
+                    size.scaleX = imageWidth / viewportWidth;
                     size.scaleY = size.scaleX;
-                    offsetAdjust = ((document.documentElement.clientHeight * size.scaleY) - $(this).height()) / 2;
+                    offsetAdjust = ((viewportHeight * size.scaleY) - imageHeight) / 2;
                     offset.top = offset.top - offsetAdjust;
                 }
                 else {
-                    size.scaleY = $(this).height() / document.documentElement.clientHeight;
+                    size.scaleY = imageHeight / viewportHeight;
                     size.scaleX = size.scaleY;
-                    offsetAdjust = ((document.documentElement.clientWidth * size.scaleX) - $(this).width()) / 2;
+                    offsetAdjust = ((viewportWidth * size.scaleX) - imageWidth) / 2;
                     offset.left = offset.left - offsetAdjust;
                 }
 
-                bigImage.css({
+                $(bigImage).css({
                     'transform': 'translate3d(' + offset.left + 'px, ' + offset.top + 'px, 0) scale3d(' + size.scaleX + ',' + size.scaleY + ', 1)',
                     'background': 'transparent url(' + imageUrl + ') no-repeat center center'
                 });
 
-                // Applying the dom element to the variable 'self'
-                var $self = $(this);
+                $self.css({'opacity': 0});
 
-                $('body').append(bigImage);
+                $('body')[0].appendChild(bigImage);
 
-                $(this).css({'opacity': 0});
 
                 $('.active-image').on('click', function () {
+
                     $(this).addClass('shrink');
                     $(this).bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
                         $(this).remove();
