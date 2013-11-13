@@ -2,8 +2,82 @@
 <html>
 <head>
 	<title>ActiveImage Plugin</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/active-image.css">
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 </head>
 <body>
-	<h1>ActiveImage Plugin</h1>
+
+	<header class="row">
+		<div class="container">
+			<div class="col-md-6">
+				<h1>ActiveImage</h1><h3>jQuery Plugin</h3>
+			</div>
+			<div class="col-md-6 fork-btn">
+				<span id="forkongithub"><a href="https://github.com/codepo8/css-fork-on-github-ribbon">Fork me on GitHub</a></span>
+			</div>
+		</div>
+	</header>
+
+	<div class="row description">
+		<div class="container">
+			<p>
+				ActiveImage is a jQuery plugin that will allow any inline image<br>
+				to be visually popped out of the content and expanded to fill the screen.
+			</p>
+		</div>
+	</div>
+
+
+	<div class="row image-grid">
+		<div class="container">
+			<img class="col-md-4 left-img" src="assets/image4.jpg">
+			<div class="col-md-8">
+				<div class="row">
+					<img class="col-md-8 top-right-img" src="assets/image1.jpg">
+				</div>
+				<div class="row">
+					<img class="col-md-4 bottom-left-img" src="assets/image3.jpg">
+					<img class="col-md-4 bottom-right-img" src="assets/image2.jpg">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="usage row">
+		<div class="container">
+			<div class="col-md-12">
+				<p class="usage">
+				Usage
+				<br>
+				Just add the 'active-image.js' file to your project:
+				<br>
+				<code>&lt;script src="active-image.js"&gt;&lt;/script&gt;</code>
+				<br>
+				And call the plugin:
+				<br>
+				<code>$( 'img' ).activeImage();</code>
+				<br>
+				Thats it!  The plugin handles the math so that your image retains its aspec ratio and fits within the viewport.
+			</p>
+			</div>
+		</div>
+	</div>
+
+	<footer class="row">
+		<div class="col-md-12">
+			<p>Built by Filip Adamczyk</p>
+			<p class="social-icons">
+				<span class="github-icon">&#62208;</span>
+				<span class="twitter-icon">&#62217;</span>
+				<span class="linkedin-icon">&#62232;</span>
+			</p>
+		</div>
+	</footer>
+	<script src="js/active-image.js"></script>
+	<script type="text/javascript">
+		$( 'img' ).activeImage();
+	</script>
 </body>
 </html>

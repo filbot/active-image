@@ -1,0 +1,101 @@
+body {
+	background: #F9F9F9;
+	color: #333;
+}
+
+header {
+	background: #74C1AF;
+	color: #fff;
+	border-bottom: 2px #57A190 solid;
+}
+
+h1 {
+	margin-bottom: 0;
+}
+
+h3 {
+	color: #C6E5DE;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+footer {
+	text-align: center;
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+}
+
+img {
+	height: 50%;
+	width: auto;
+}
+
+.image-grid {
+	background: linear-gradient(to bottom, #F9F9F9 75%, #F2F2F2 25%);
+}
+
+.description {
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+}
+
+.description p {
+	font-size: 1.75rem;
+	color: #333;
+	padding: 0 15px;
+}
+
+.usage {
+	background: #F2F2F2;
+	padding: 4rem 0;
+}
+
+footer .social-icons {
+	font-family: 'Entypo Social';
+	font-size: 5rem;
+	line-height: 4rem;
+}
+
+.fork-btn {
+	margin-top: 4rem;
+}
+
+.fork-btn span a {
+	color: #fff;
+	height: 36px;
+	line-height: 36px;
+	padding: 10px 10px;
+	-webkit-border-radius: 4px 4px 4px 4px;
+	-moz-border-radius: 4px 4px 4px 4px;
+	border-radius: 4px 4px 4px 4px;
+	background: #e85c41;
+}
+
+.fork-btn span a:hover {
+	text-decoration: none;
+}
+
+.twitter-icon:hover {
+	color: #56D7FE;
+	cursor: pointer;
+}
+
+.github-icon:hover {
+	color: #000;
+	cursor: pointer;
+}
+
+.linkedin-icon:hover {
+	color: #0073B5;
+	cursor: pointer;
+}
+
+@font-face {
+  font-family: 'Entypo Social';
+  src: url('../fonts/entypo-social.eot');
+  src: url('../fonts/entypo-social.eot?#iefix') format('embedded-opentype'),
+  		url('../fonts/entypo-social.woff') format('woff'),
+		url('../fonts/entypo-social.ttf') format('truetype'),
+		url('../fonts/entypo-social.svg#entypo-social') format('svg');
+}
+
