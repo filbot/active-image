@@ -58,6 +58,12 @@ footer .social-icons {
 
 .fork-btn {
 	margin-top: 4rem;
+	position: relative;
+}
+
+.fork-btn span {
+	position: absolute;
+	right: 0;
 }
 
 .fork-btn span a {
