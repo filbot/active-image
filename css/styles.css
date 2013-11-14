@@ -81,6 +81,11 @@ footer .social-icons {
 	text-decoration: none;
 }
 
+.social-icons a {
+	text-decoration: none;
+	color: #333;
+}
+
 .twitter-icon:hover {
 	color: #56D7FE;
 	cursor: pointer;
